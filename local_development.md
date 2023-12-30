@@ -127,32 +127,46 @@ Install VS Code extensions:
 ```bash
 # Black Formatter
 code --install-extension ms-python.black-formatter
+
 # CodeSnap
 code --install-extension adpyke.codesnap
+
 # Docker
 code --install-extension ms-azuretools.vscode-docker
+
 # Even Better TOML
 code --install-extension tamasfe.even-better-toml
+
 # Fira Code and Material Icon Theme
 code --install-extension aleleba.fira-code-material-icon-theme
+
 # Makefile Tools
 code --install-extension ms-vscode.makefile-tools
+
 # Mako
 code --install-extension tommorris.mako
+
 # Markdown All in One
 code --install-extension yzhang.markdown-all-in-one
+
 # Markdown Preview Mermaid Support
 code --install-extension bierner.markdown-mermaid
+
 # MyPy Type Checker
 code --install-extension ms-python.mypy-type-checker
+
 # Pylance
 code --install-extension ms-python.vscode-pylance
+
 # Ruff
 code --install-extension charliermarsh.ruff
+
 # Run on Save
 code --install-extension emeraldwalk.RunOnSave
+
 # Sourcery
 code --install-extension sourcery.sourcery
+
 # vscode-pets (пожалуй, самое важное расширение для любителей домашних питомцев)
 code --install-extension tonybaloney.vscode-pets
 ```
@@ -269,6 +283,8 @@ Set up the `settings.json`:
     "workbench.iconTheme": "fira-code-material-icon-theme"
 }
 ```
+
+*P.S. If one doesn't like a light theme, then go to the `Code` -> `Settings` -> `Theme` -> `Color Theme` and select the one that is needed.*
 
 ## 8. Podman installation
 
