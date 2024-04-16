@@ -2,7 +2,7 @@
 
 This set of steps is used for setting local development workspace.
 
-## 1. Oh My Zsh installation
+## 1. [Oh My Zsh](https://ohmyz.sh/) installation
 
 Fire up the command:
 
@@ -26,13 +26,15 @@ Fire up the command:
 xcode-select --install
 ```
 
-## 3. Homebrew installation
+## 3. [Homebrew](https://brew.sh/) installation
 
 Download the installation script and fire it up:
 
 ```bash
 curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+```
 
+```bash
 /bin/bash install.sh
 ```
 
@@ -62,7 +64,7 @@ Apply the profile changes
 source ~/.profile
 ```
 
-## 4. pyenv installation
+## 4. [pyenv](https://github.com/pyenv/pyenv) installation
 
 Fire up the command:
 
@@ -92,7 +94,7 @@ Apply the profile changes
 source ~/.profile
 ```
 
-## 5. Python installation
+## 5. [Python](https://www.python.org/) installation
 
 Fire up the command:
 
@@ -106,13 +108,13 @@ Select the version of Python to be used:
 pyenv global 3.11.4
 ```
 
-## 6. PIP upgrading and Poetry installation
+## 6. [PIP](https://pip.pypa.io/en/stable/) upgrading and [Poetry](https://python-poetry.org/) installation
 
 ```bash
 pip install -U pip poetry
 ```
 
-## 7. Visual Studio Code installation
+## 7. [Visual Studio](https://code.visualstudio.com/) Code installation
 
 Install VS Code from [here](https://code.visualstudio.com/Download).
 
@@ -127,47 +129,75 @@ Install VS Code extensions:
 ```bash
 # Black Formatter
 code --install-extension ms-python.black-formatter
+```
 
+```bash
 # CodeSnap
 code --install-extension adpyke.codesnap
+```
 
+```bash
 # Docker
 code --install-extension ms-azuretools.vscode-docker
+```
 
+```bash
 # Even Better TOML
 code --install-extension tamasfe.even-better-toml
+```
 
+```bash
 # Fira Code and Material Icon Theme
 code --install-extension aleleba.fira-code-material-icon-theme
+```
 
+```bash
 # Makefile Tools
 code --install-extension ms-vscode.makefile-tools
+```
 
+```bash
 # Mako
 code --install-extension tommorris.mako
+```
 
+```bash
 # Markdown All in One
 code --install-extension yzhang.markdown-all-in-one
+```
 
+```bash
 # Markdown Preview Mermaid Support
 code --install-extension bierner.markdown-mermaid
+```
 
+```bash
 # MyPy Type Checker
 code --install-extension ms-python.mypy-type-checker
+```
 
+```bash
 # Pylance
 code --install-extension ms-python.vscode-pylance
+```
 
+```bash
 # Ruff
 code --install-extension charliermarsh.ruff
+```
 
+```bash
 # Run on Save
 code --install-extension emeraldwalk.RunOnSave
+```
 
+```bash
 # Sourcery
 code --install-extension sourcery.sourcery
+```
 
-# vscode-pets (пожалуй, самое важное расширение для любителей домашних питомцев)
+```bash
+# vscode-pets (пожалуй, самое важное расширение, особенно для любителей домашних питомцев)
 code --install-extension tonybaloney.vscode-pets
 ```
 
@@ -286,7 +316,7 @@ Set up the `settings.json`:
 
 *P.S. If one doesn't like a light theme, then go to the `Code` -> `Settings` -> `Theme` -> `Color Theme` and select the one that is needed.*
 
-## 8. Podman installation
+## 8. [Podman](https://podman.io/) installation
 
 If you have previously worked with Docker via Docker Desktop, then it is very important to remove it correctly in order to avoid conflicts with Podman.
 
@@ -297,30 +327,49 @@ If you have already deleted Docker desktop incorrectly, then use the first appro
 After the cleanup is complete, fire up the command:
 
 ```bash
-brew install podman podman-desktop
+brew install podman podman-desktop podman-compose
 ```
 
 Set up and start the virtual machine:
 
 ```bash
 podman machine init
+```
+
+```bash
 podman machine set --rootful
+```
+
+```bash
 podman machine start
 ```
 
 If the last commands hangs on, then one should install the older version of Podman and then start the virtual machine:
 ```bash
-brew uninstall podman-desktop podman qemu
+brew uninstall podman-compose podman-desktop podman qemu
+```
 
+```bash
 wget https://raw.githubusercontent.com/Homebrew/homebrew-core/d0c1a25835de4aeac60a4fadbf46ebf14a7d1934/Formula/p/podman.rb -O /tmp/podman.rb
+```
+
+```bash
 wget https://raw.githubusercontent.com/Homebrew/homebrew-core/676c6922d79d24cc0794dd22250e3ea1167f2cd9/Formula/q/qemu.rb -O /tmp/qemu.rb
+```
 
-brew install /tmp/podman.rb
-brew install /tmp/qemu.rb
-brew install podman-desktop
+```bash
+brew install /tmp/podman.rb /tmp/qemu.rb podman-desktop podman-compose
+```
 
+```bash
 podman machine init
+```
+
+```bash
 podman machine set --rootful
+```
+
+```bash
 podman machine start
 ```
 
@@ -341,6 +390,9 @@ Restart the virtual machine:
 
 ```bash
 podman machine stop
+```
+
+```bash
 podman machine start
 ```
 
@@ -350,7 +402,7 @@ Test that Podman wirks correctly:
 podman run --rm busybox echo "Hello World"
 ```
 
-## 9. Ansible installation
+## 9. [Ansible](https://www.ansible.com/) installation
 
 Fire up the command:
 
@@ -377,4 +429,12 @@ Apply the profile changes
 
 ```bash
 source ~/.profile
+```
+
+## 11. [Warp terminal](https://www.warp.dev/) installation
+
+Fire up the command:
+
+```bash
+brew install --cask warp
 ```
