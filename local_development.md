@@ -2,7 +2,15 @@
 
 This set of steps is used for setting local development workspace.
 
-## 1. [Oh My Zsh](https://ohmyz.sh/) installation
+## 1. Xcode installation
+
+Fire up the command:
+
+```bash
+xcode-select --install
+```
+
+## 2. [Oh My Zsh](https://ohmyz.sh/) installation
 
 Fire up the command:
 
@@ -16,14 +24,6 @@ Check that the default shell switched to zsh by running this command:
 
 ```bash
 echo $0
-```
-
-## 2. Xcode installation
-
-Fire up the command:
-
-```bash
-xcode-select --install
 ```
 
 ## 3. [Homebrew](https://brew.sh/) installation
@@ -112,6 +112,12 @@ pyenv global 3.11.4
 
 ```bash
 pip install -U pip poetry
+```
+
+Set poetry configuration so that `.venv` directory is created in a project folder for each project:
+
+```bash
+poetry config virtualenvs.in-project true
 ```
 
 ## 7. [Visual Studio](https://code.visualstudio.com/) Code installation
@@ -396,7 +402,7 @@ podman machine stop
 podman machine start
 ```
 
-Test that Podman wirks correctly:
+Test that Podman works correctly:
 
 ```bash
 podman run --rm busybox echo "Hello World"
@@ -438,3 +444,13 @@ Fire up the command:
 ```bash
 brew install --cask warp
 ```
+
+## 12. [Termius SSH client](https://www.termius.com/) installation
+
+Fire up the command:
+
+```bash
+brew install --cask termius
+```
+
+brew install --cask termius
