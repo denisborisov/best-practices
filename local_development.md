@@ -454,3 +454,24 @@ brew install --cask termius
 ```
 
 brew install --cask termius
+
+## 13. [K8s](https://kubernetes.io/) installation
+
+Fire up the command:
+
+```bash
+brew install kubectl
+```
+
+Test and ensure that the version you installed is up-to-date:
+
+```bash
+kubectl version --client
+```
+
+Add the following to your ~/.zshrc file:
+
+```bash
+# K8s
+source <(kubectl completion zsh)
+```
