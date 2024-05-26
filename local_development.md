@@ -158,6 +158,11 @@ code --install-extension aleleba.fira-code-material-icon-theme
 ```
 
 ```bash
+# Indent Rainbow
+code --install-extension oderwat.indent-rainbow
+```
+
+```bash
 # Makefile Tools
 code --install-extension ms-vscode.makefile-tools
 ```
