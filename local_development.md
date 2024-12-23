@@ -50,7 +50,7 @@ cd ~
 
 Execute the following command:
 ```bash
-echo "export PS1='%F{green}%n@%m:%~%f$ '" >> ~/.zshrc
+export PS1='%F{cyan}%n%f:%F{blue}%~%f $(git_prompt_info)%F{yellow}$%f '
 ```
 
 ## 5. [Homebrew](https://brew.sh/) installation
@@ -113,7 +113,7 @@ pyenv global 3.13.1
 
 ## 8. [PIP](https://pip.pypa.io/en/stable/) upgrading and [Poetry](https://python-poetry.org/) installation
 
-> [!info]
+> :warning:
 > Do not forget to perform steps from this section for each Python version installed via `pyenv`.
 
 ```bash
@@ -259,7 +259,7 @@ Set up the `settings.json`:
 2. Open the command pallette via `Cmd` + `,`.
 3. Type `json schemas` in the search bar.
 5. Press on the `Edit in settings.json`.
-6. replace the contents with the following (change the `username` to your macOS username):
+6. Replace the contents with the following:
 
 ```json
 {
@@ -315,7 +315,8 @@ Set up the `settings.json`:
     "mypy-type-checker.path": [
         "./.venv/bin/mypy"
     ],
-    "python.defaultInterpreterPath": "/Users/username/.pyenv/shims/python",
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.venvPath": "./.venv",
     "[python]": {
         "editor.formatOnPaste": true,
         "editor.formatOnSave": true,
