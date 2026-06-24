@@ -24,6 +24,12 @@ Set the user email:
 git config --global user.email "your_email@example.com"
 ```
 
+Check that new settings applied:
+
+```bash
+git config --list --global
+```
+
 ## 3. [Oh My Zsh](https://ohmyz.sh/) installation
 
 Fire up the command:
@@ -40,20 +46,7 @@ Check that the default shell switched to zsh by running this command:
 echo $0
 ```
 
-## 4. Changing the color of the command line
-
-Go to your home directory via
-
-```bash
-cd ~
-```
-
-Execute the following command:
-```bash
-export PS1='%F{cyan}%n%f:%F{blue}%~%f $(git_prompt_info)%F{yellow}$%f '
-```
-
-## 5. [Homebrew](https://brew.sh/) installation
+## 4. [Homebrew](https://brew.sh/) installation
 
 Download the installation script and fire it up:
 
@@ -63,32 +56,44 @@ Download the installation script and fire it up:
 
 Follow the guidelines from the `===> Next steps` section of the output.
 
-## 6. [pyenv](https://github.com/pyenv/pyenv) installation
+**OR** if you need to update it:
+
+At first:
+
+```bash
+brew update
+```
+
+And then:
+
+```bash
+brew upgrade
+```
+
+## 5. Set up [Warp](https://www.warp.dev/) Terminal
 
 Fire up the command:
 
 ```bash
-brew install pyenv
+brew install --cask warp
 ```
 
-Set up your shell environment for Pyenv (more information can be found [here](https://github.com/pyenv/pyenv?tab=readme-ov-file#b-set-up-your-shell-environment-for-pyenv)):
+## 6. [uv](https://docs.astral.sh/uv/) installation
+
+Fire up the command:
 
 ```bash
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+brew install uv
 ```
 
-```bash
-echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-```
+**uv project workflow:**
 
 ```bash
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-```
-
-Apply the profile changes
-
-```bash
-source ~/.zshrc
+uv init
+uv sync
+uv run python main.py
+uv add fastapi
+uv add --dev pytest
 ```
 
 ## 7. [Python](https://www.python.org/) installation
@@ -96,34 +101,21 @@ source ~/.zshrc
 Run the following command:
 
 ```bash
-brew install xz
+uv python install 3.14
 ```
+
+See installed Python versions:
+
+```bash
+uv python list
+```
+
+## 8. [Docker](https://www.docker.com/) installation
 
 Fire up the command:
 
 ```bash
-pyenv install 3.13.1
-```
-
-Select the version of Python to be used:
-
-```bash
-pyenv global 3.13.1
-```
-
-## 8. [PIP](https://pip.pypa.io/en/stable/) upgrading and [Poetry](https://python-poetry.org/) installation
-
-> :warning:
-> Do not forget to perform steps from this section for each Python version installed via `pyenv`.
-
-```bash
-pip install -U pip poetry
-```
-
-Set poetry configuration so that `.venv` directory is created in a project folder for each project:
-
-```bash
-poetry config virtualenvs.in-project true
+brew install --cask docker
 ```
 
 ## 9. [K8s](https://kubernetes.io/) installation
@@ -146,50 +138,22 @@ Execute the following command:
 echo 'source <(kubectl completion zsh)' >> ~/.zshrc
 ```
 
-## 10. [Podman](https://podman.io/) installation
-
-If you have previously worked with Docker via Docker Desktop, then it is very important to remove it correctly in order to avoid conflicts with Podman.
-
-To completely uninstall, open the Docker Desktop application, click on the Bug icon in the upper right corner, and select "Uninstall" from the menu that appears at the very bottom. After the process is complete, if the application is still present in Applications, move it to the trash and empty it.
-
-If you have already deleted Docker desktop incorrectly, then use the first approach from [this guide](https://www.drbuho.com/how-to/uninstall-docker-mac) to clean up the "tails".
-
-After the cleanup is complete, fire up the command:
+## 10. Install useful CLI tools
 
 ```bash
-brew install podman podman-desktop podman-compose
-```
-
-Set up and start the virtual machine:
-
-```bash
-podman machine init
-```
-
-```bash
-podman machine start
-```
-
-Follow the guidelines from the output to install the system helper service:
-
-```bash
-sudo /opt/homebrew/Cellar/podman/5.3.1/bin/podman-mac-helper install
-```
-
-Restart the virtual machine:
-
-```bash
-podman machine stop
-```
-
-```bash
-podman machine start
-```
-
-Test that Podman works correctly:
-
-```bash
-podman run --rm busybox echo "Hello World"
+brew install curl
+brew install fd
+brew install htop
+brew install k9s
+brew install make
+brew install jq
+brew install pgcli
+brew install postgresql
+brew install ripgrep
+brew install tree
+brew install watch
+brew install wget
+brew install yq
 ```
 
 ## 11. [Visual Studio](https://code.visualstudio.com/) Code installation
@@ -205,8 +169,28 @@ Set up the PATH so that you can run VS Code via the terminal:
 Install VS Code extensions:
 
 ```bash
+# Black Formatter
+code --install-extension ms-python.black-formatter
+```
+
+```bash
+# Container Tools
+code --install-extension ms-azuretools.vscode-containers
+```
+
+```bash
+# Dev Containers
+code --install-extension ms-vscode-remote.remote-containers
+```
+
+```bash
 # Docker
 code --install-extension ms-azuretools.vscode-docker
+```
+
+```bash
+# Docker DX
+code --install-extension docker.docker
 ```
 
 ```bash
@@ -222,6 +206,46 @@ code --install-extension aleleba.fira-code-material-icon-theme
 ```bash
 # Indent Rainbow
 code --install-extension oderwat.indent-rainbow
+```
+
+```bash
+# Kubernetes
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+```
+
+```bash
+# Makefile Tools
+code --install-extension ms-vscode.makefile-tools
+```
+
+```bash
+# Mako
+code --install-extension tommorris.mako
+```
+
+```bash
+# PostgreSQL
+code --install-extension ms-ossdata.vscode-pgsql
+```
+
+```bash
+# Pylance
+code --install-extension ms-python.vscode-pylance
+```
+
+```bash
+# Python
+code --install-extension ms-python.python
+```
+
+```bash
+# Python Debugger
+code --install-extension ms-python.debugpy
+```
+
+```bash
+# Python Environments
+code --install-extension ms-python.vscode-python-envs
 ```
 
 ```bash
@@ -250,8 +274,23 @@ code --install-extension emeraldwalk.RunOnSave
 ```
 
 ```bash
+# Sourcery
+code --install-extension sourcery.sourcery
+```
+
+```bash
+# SQLTools
+code --install-extension mtxr.sqltools
+```
+
+```bash
 # vscode-pets (perhaps the most important extension, especially for pet lovers)
 code --install-extension tonybaloney.vscode-pets
+```
+
+```bash
+# YAML
+code --install-extension redhat.vscode-yaml
 ```
 
 Set up the `settings.json`:
@@ -264,6 +303,8 @@ Set up the `settings.json`:
 ```json
 {
     "diffEditor.ignoreTrimWhitespace": false,
+    "docker.extension.enableComposeLanguageServer": false,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.codeActionsOnSave": {},
     "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
@@ -304,7 +345,9 @@ Set up the `settings.json`:
         "markdown": true,
         "html": true
     },
-    "json.schemas": [],
+    "json.schemas": [
+    
+    ],
     "launch": {
         "inputs": [],
         "configurations": [],
@@ -326,12 +369,13 @@ Set up the `settings.json`:
             "source.fixAll": "explicit"
         }
     },
+    "redhat.telemetry.enabled": true,
     "ruff.path": [
         "./.venv/bin/ruff"
     ],
+    "security.promptForLocalFileProtocolHandling": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "vscode-pets.theme": "forest",
-    "vscode-pets.throwBallWithMouse": true,
+    "terminal.external.osxExec": "Warp.app",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.profiles.linux": {
         "bash": {
@@ -353,6 +397,8 @@ Set up the `settings.json`:
             "icon": "terminal-powershell"
         }
     },
+    "vscode-pets.theme": "forest",
+    "vscode-pets.throwBallWithMouse": true,
     "window.zoomLevel": 2,
     "workbench.colorTheme": "Quiet Light",
     "workbench.editor.empty.hint": "hidden",
@@ -360,4 +406,29 @@ Set up the `settings.json`:
 }
 ```
 
-*P.S. If one doesn't like a light theme, then go to the `Code` -> `Settings` -> `Theme` -> `Color Theme` and select the one that is needed.*
+*P.S. If one doesn't like a light theme, then go to the `Code` -> `Preferences` -> `Themes` -> `Color Theme` and select the one that is needed.*
+
+## 12. Add shell plugins
+
+Fire up the command:
+```
+code ~/.zshrc
+```
+
+Update the plugin section with
+```bash
+plugins=(
+    docker
+    git
+    kubectl
+    python
+)
+```
+
+Then execute:
+```bash
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+```
