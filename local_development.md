@@ -110,7 +110,21 @@ See installed Python versions:
 uv python list
 ```
 
-## 8. [Docker](https://www.docker.com/) installation
+## 8. [Go](https://go.dev/) installation
+
+Run the following command:
+
+```bash
+brew install go
+```
+
+See installed Go versions:
+
+```bash
+go version
+```
+
+## 9. [Docker](https://www.docker.com/) installation
 
 Fire up the command:
 
@@ -118,7 +132,7 @@ Fire up the command:
 brew install --cask docker
 ```
 
-## 9. [K8s](https://kubernetes.io/) installation
+## 10. [K8s](https://kubernetes.io/) installation
 
 Fire up the command:
 
@@ -138,7 +152,7 @@ Execute the following command:
 echo 'source <(kubectl completion zsh)' >> ~/.zshrc
 ```
 
-## 10. Install useful CLI tools
+## 11. Install useful CLI tools
 
 ```bash
 brew install curl
@@ -156,7 +170,7 @@ brew install wget
 brew install yq
 ```
 
-## 11. [Visual Studio](https://code.visualstudio.com/) Code installation
+## 12. [Visual Studio](https://code.visualstudio.com/) Code installation
 
 Install VS Code from [here](https://code.visualstudio.com/Download).
 
@@ -201,6 +215,11 @@ code --install-extension tamasfe.even-better-toml
 ```bash
 # Fira Code and Material Icon Theme
 code --install-extension aleleba.fira-code-material-icon-theme
+```
+
+```bash
+# Go
+code --install-extension golang.go
 ```
 
 ```bash
@@ -408,7 +427,7 @@ Set up the `settings.json`:
 
 *P.S. If one doesn't like a light theme, then go to the `Code` -> `Preferences` -> `Themes` -> `Color Theme` and select the one that is needed.*
 
-## 12. Add shell plugins
+## 13. Add shell plugins
 
 Fire up the command:
 ```
