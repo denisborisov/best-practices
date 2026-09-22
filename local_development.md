@@ -124,6 +124,13 @@ See installed Go versions:
 go version
 ```
 
+Execute the following commands:
+
+```bash
+echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.zshrc
+echo 'export PATH="$PATH:$(go env GOPATH)/bin"' >> ~/.zshrc
+```
+
 ## 9. [Docker](https://www.docker.com/) installation
 
 Fire up the command:
