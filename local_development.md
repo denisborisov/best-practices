@@ -177,7 +177,15 @@ brew install wget
 brew install yq
 ```
 
-## 12. [Visual Studio](https://code.visualstudio.com/) Code installation
+## 12. [Claude Code](https://claude.com/product/claude-code) installation
+
+Execute the following command:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+## 13. [Visual Studio Code](https://code.visualstudio.com/) installation
 
 Install VS Code from [here](https://code.visualstudio.com/Download).
 
@@ -192,6 +200,11 @@ Install VS Code extensions:
 ```bash
 # Black Formatter
 code --install-extension ms-python.black-formatter
+```
+
+```bash
+# Claude Code
+code --install-extension Anthropic.claude-code
 ```
 
 ```bash
@@ -434,7 +447,7 @@ Set up the `settings.json`:
 
 *P.S. If one doesn't like a light theme, then go to the `Code` -> `Preferences` -> `Themes` -> `Color Theme` and select the one that is needed.*
 
-## 13. Add shell plugins
+## 14. Add shell plugins
 
 Fire up the command:
 ```
