@@ -10,7 +10,7 @@ Fire up the command:
 xcode-select --install
 ```
 
-## 2. Set up git
+## 2. Set up [git](https://git-scm.com/)
 
 Set the user name:
 
