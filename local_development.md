@@ -164,6 +164,8 @@ echo 'source <(kubectl completion zsh)' >> ~/.zshrc
 ```bash
 brew install curl
 brew install fd
+brew install gh
+brew install glab
 brew install htop
 brew install k9s
 brew install make
@@ -183,6 +185,12 @@ Execute the following command:
 
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Install the commit commands plugin by running the following inside Claude Code:
+
+```text
+/plugin install commit-commands@claude-plugins-official
 ```
 
 ## 13. [Visual Studio Code](https://code.visualstudio.com/) installation
@@ -341,6 +349,8 @@ Set up the `settings.json`:
 
 ```json
 {
+    "claudeCode.hideOnboarding": true,
+    "claudeCode.preferredLocation": "panel",
     "diffEditor.ignoreTrimWhitespace": false,
     "docker.extension.enableComposeLanguageServer": false,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -384,6 +394,7 @@ Set up the `settings.json`:
         "markdown": true,
         "html": true
     },
+    "go.toolsManagement.autoUpdate": true,
     "json.schemas": [
     
     ],
@@ -397,7 +408,35 @@ Set up the `settings.json`:
     "mypy-type-checker.path": [
         "./.venv/bin/mypy"
     ],
-    "python.defaultInterpreterPath": ".venv/bin/python",
+    "pgsql.connections": [
+        {
+            "id": "4ADC2C77-1957-4E41-852B-4C91F168DAE5",
+            "groupId": "8790FBD2-5BB5-4B4F-B5BC-B0F38B7881BA",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "sshSavePassword": true,
+            "savePassword": true,
+            "sslRootCertMode": "none",
+            "server": "localhost",
+            "user": "postgres",
+            "password": "",
+            "database": "appdb",
+            "profileName": "localhost, appdb (postgres)",
+            "expiresOn": 0,
+            "sshPassword": ""
+        }
+    ],
+    "pgsql.serverGroups": [
+        {
+            "name": "Servers",
+            "id": "8790FBD2-5BB5-4B4F-B5BC-B0F38B7881BA",
+            "isDefault": true
+        }
+    ],
+    "python.defaultInterpreterPath": "./.venv/bin/python",
     "python.venvPath": "./.venv",
     "[python]": {
         "editor.formatOnPaste": true,
@@ -436,12 +475,15 @@ Set up the `settings.json`:
             "icon": "terminal-powershell"
         }
     },
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path-mac": "/Users/denisborisov/.vs-kubernetes/tools/minikube/darwin-arm64/minikube"
+    },
     "vscode-pets.theme": "forest",
     "vscode-pets.throwBallWithMouse": true,
     "window.zoomLevel": 2,
-    "workbench.colorTheme": "Quiet Light",
     "workbench.editor.empty.hint": "hidden",
-    "workbench.iconTheme": "fira-code-material-icon-theme"
+    "workbench.iconTheme": "fira-code-material-icon-theme",
+    "workbench.colorTheme": "Quiet Light"
 }
 ```
 
