@@ -164,6 +164,7 @@ echo 'source <(kubectl completion zsh)' >> ~/.zshrc
 ```bash
 brew install curl
 brew install fd
+brew install gh
 brew install htop
 brew install k9s
 brew install make
@@ -183,6 +184,12 @@ Execute the following command:
 
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Install the commit commands plugin by running the following inside Claude Code:
+
+```text
+/plugin install commit-commands@claude-plugins-official
 ```
 
 ## 13. [Visual Studio Code](https://code.visualstudio.com/) installation
