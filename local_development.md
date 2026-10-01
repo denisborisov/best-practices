@@ -165,6 +165,7 @@ echo 'source <(kubectl completion zsh)' >> ~/.zshrc
 brew install curl
 brew install fd
 brew install gh
+brew install glab
 brew install htop
 brew install k9s
 brew install make
