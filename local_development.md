@@ -193,6 +193,12 @@ Install the commit commands plugin by running the following inside Claude Code:
 /plugin install commit-commands@claude-plugins-official
 ```
 
+Install the Pyright language server plugin (Python code intelligence) the same way:
+
+```text
+/plugin install pyright-lsp@claude-plugins-official
+```
+
 ## 13. [Visual Studio Code](https://code.visualstudio.com/) installation
 
 Install VS Code from [here](https://code.visualstudio.com/Download).
