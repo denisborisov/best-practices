@@ -162,6 +162,7 @@ echo 'source <(kubectl completion zsh)' >> ~/.zshrc
 ## 11. Install useful CLI tools
 
 ```bash
+brew install cloc
 brew install curl
 brew install fd
 brew install gh
